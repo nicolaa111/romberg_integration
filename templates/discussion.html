@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Romberg Integration Discussion</title>
+</head>
+<body>
+
+<h1>Romberg Integration</h1>
+
+<p>
+Romberg Integration is a numerical method used to approximate definite integrals with higher accuracy by improving the trapezoidal rule using Richardson extrapolation.
+</p>
+
+<h2>Concept</h2>
+
+<p>
+It repeatedly refines trapezoidal approximations and eliminates errors using extrapolation techniques.
+</p>
+
+<h2>Formula</h2>
+
+<p>
+R(i,j)=R(i,j-1)+ (R(i,j-1)-R(i-1,j-1)) / (4^j - 1)
+</p>
+
+<h2>Advantages</h2>
+<ul>
+    <li>High accuracy</li>
+    <li>Fast convergence</li>
+</ul>
+
+<h2>Limitations</h2>
+<ul>
+    <li>Requires smooth functions</li>
+    <li>More computation than basic methods</li>
+</ul>
+
+<br>
+
+<a href="/">Back Home</a>
+
+</body>
+</html>
