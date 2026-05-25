@@ -1,71 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Romberg Integration Calculator</title>
+    <title>Romberg Integration</title>
 </head>
 <body>
 
-<h1>Romberg Integration Calculator</h1>
+<h1>Romberg Integration Project</h1>
 
-<form method="POST">
-
-    <input type="text"
-           name="function"
-           placeholder="sin(x)"
-           required>
-
-    <br><br>
-
-    <input type="number"
-           step="any"
-           name="a"
-           placeholder="Lower Limit"
-           required>
-
-    <br><br>
-
-    <input type="number"
-           step="any"
-           name="b"
-           placeholder="Upper Limit"
-           required>
-
-    <br><br>
-
-    <input type="number"
-           name="n"
-           placeholder="Iterations"
-           required>
-
-    <br><br>
-
-    <button type="submit">
-        Compute
-    </button>
-
-</form>
-
-{% if result %}
-
-<h2>Result:</h2>
-
-<p>{{ result }}</p>
-
-<h2>Romberg Table</h2>
-
-<table border="1">
-
-{% for row in table %}
-<tr>
-    {% for item in row %}
-    <td>{{ item }}</td>
-    {% endfor %}
-</tr>
-{% endfor %}
-
-</table>
-
-{% endif %}
+<a href="/discussion">Discussion</a> |
+<a href="/calculator">Calculator</a>
 
 </body>
 </html>

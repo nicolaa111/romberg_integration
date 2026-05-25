@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+<h1>Romberg Calculator</h1>
+
+<form method="POST">
+Function: <input name="function"><br>
+a: <input name="a"><br>
+b: <input name="b"><br>
+n: <input name="n"><br>
+<button>Compute</button>
+</form>
+
+{% if result %}
+<h2>Result: {{ result }}</h2>
+
+<table border="1">
+{% for row in table %}
+<tr>
+{% for item in row %}
+<td>{{ item }}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+</body>
+</html>
