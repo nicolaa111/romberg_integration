@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Romberg Integration Discussion</title>
+    <title>Discussion</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f2027;
+            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+            color: white;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #00e6e6;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a {
+            color: yellow;
+        }
+    </style>
+
 </head>
 <body>
 
-<h1>Romberg Integration Method</h1>
+<h1>Romberg Integration</h1>
 
 <p>
-Romberg Integration is a numerical technique used to approximate definite integrals.
-It improves the accuracy of the Trapezoidal Rule using Richardson extrapolation.
+Romberg Integration is a numerical method that improves trapezoidal rule accuracy using Richardson extrapolation.
 </p>
 
 <h2>Formula</h2>
 
-<p>
-R(i,j) = R(i,j-1) + (R(i,j-1) - R(i-1,j-1)) / (4^j - 1)
-</p>
+<p>R(i,j) = R(i,j-1) + (R(i,j-1) - R(i-1,j-1)) / (4^j - 1)</p>
 
 <hr>
 
-<h2>Example 1 (Step-by-Step)</h2>
-
-<p><b>Function:</b> sin(x)</p>
-<p><b>Interval:</b> a = 0, b = 1</p>
-<p><b>n:</b> 4</p>
-
-<h3>Step 1: Initial Approximation</h3>
-<p>R(0,0) = (1/2)[sin(0) + sin(1)]</p>
-<p>R(0,0) = 0.5(0 + 0.84147) = 0.420735</p>
-
-<h3>Step 2: First Refinement</h3>
-<p>Midpoint: x = 0.5</p>
-<p>sin(0.5) = 0.479425</p>
-
-<h3>Step 3: Improved Value</h3>
-<p>R(1,0) ≈ 0.450079</p>
-
-<h3>Step 4: Romberg Extrapolation</h3>
-<p>R(1,1) ≈ 0.45969769</p>
+<h2>Example 1</h2>
+<p>Function: sin(x)</p>
+<p>a = 0, b = 1</p>
+<p>Result ≈ 0.45969769</p>
 
 <hr>
 
-<h2>Example 2 (Step-by-Step)</h2>
-
-<p><b>Function:</b> sin(x)</p>
-<p><b>Interval:</b> a = 0, b = 3.1416</p>
-<p><b>n:</b> 4</p>
-
-<h3>Step 1: Initial Approximation</h3>
-<p>R(0,0) = (π/2)[sin(0) + sin(π)]</p>
-<p>R(0,0) = 0</p>
-
-<h3>Step 2: First Refinement</h3>
-<p>Midpoint: x = 1.5708</p>
-<p>sin(1.5708) ≈ 1</p>
-
-<h3>Step 3: Improved Value</h3>
-<p>R(1,0) = 1.5708</p>
-
-<h3>Step 4: Final Result</h3>
-<p>R(1,1) ≈ 2.0000</p>
-
-<hr>
+<h2>Example 2</h2>
+<p>Function: sin(x)</p>
+<p>a = 0, b = 3.1416</p>
+<p>Result ≈ 2.0000</p>
 
 <br>
+
 <a href="/">Back Home</a>
 
 </body>
