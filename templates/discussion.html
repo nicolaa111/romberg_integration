@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Discussion</title>
+    <title>Romberg Discussion</title>
 
     <style>
         body {
             font-family: Arial;
-            background: #0f2027;
-            background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+            background: linear-gradient(to right, #141e30, #243b55);
             color: white;
             padding: 20px;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
 
         h1, h2 {
             color: #00e6e6;
         }
 
-        p {
-            line-height: 1.6;
+        .step {
+            margin-left: 20px;
         }
 
         a {
@@ -28,33 +34,87 @@
 </head>
 <body>
 
-<h1>Romberg Integration</h1>
+<h1>Romberg Integration Method</h1>
 
+<div class="box">
 <p>
-Romberg Integration is a numerical method that improves trapezoidal rule accuracy using Richardson extrapolation.
+Romberg Integration is a numerical method used to approximate definite integrals by improving the Trapezoidal Rule using Richardson extrapolation.
+</p>
+</div>
+
+<div class="box">
+<h2>Formula</h2>
+<p>R(i,j) = R(i,j-1) + (R(i,j-1) - R(i-1,j-1)) / (4^j - 1)</p>
+</div>
+
+<!-- EXAMPLE 1 -->
+<div class="box">
+<h2>Example 1: ∫ sin(x) dx from 0 to 1</h2>
+
+<p><b>Function:</b> sin(x)</p>
+<p><b>a:</b> 0</p>
+<p><b>b:</b> 1</p>
+<p><b>n:</b> 4</p>
+
+<h3>Step 1: Initial Trapezoidal Rule</h3>
+<p class="step">
+R(0,0) = (1/2)[sin(0) + sin(1)]  
+= 0.5(0 + 0.84147)  
+= 0.420735
 </p>
 
-<h2>Formula</h2>
+<h3>Step 2: First Refinement</h3>
+<p class="step">
+Midpoint: x = 0.5  
+sin(0.5) = 0.479425
+</p>
 
-<p>R(i,j) = R(i,j-1) + (R(i,j-1) - R(i-1,j-1)) / (4^j - 1)</p>
+<h3>Step 3: Improved Approximation</h3>
+<p class="step">
+R(1,0) = 0.450079
+</p>
 
-<hr>
+<h3>Step 4: Romberg Extrapolation</h3>
+<p class="step">
+R(1,1) = 0.45969769
+</p>
+</div>
 
-<h2>Example 1</h2>
-<p>Function: sin(x)</p>
-<p>a = 0, b = 1</p>
-<p>Result ≈ 0.45969769</p>
+<!-- EXAMPLE 2 -->
+<div class="box">
+<h2>Example 2: ∫ sin(x) dx from 0 to π</h2>
 
-<hr>
+<p><b>Function:</b> sin(x)</p>
+<p><b>a:</b> 0</p>
+<p><b>b:</b> 3.1416</p>
+<p><b>n:</b> 4</p>
 
-<h2>Example 2</h2>
-<p>Function: sin(x)</p>
-<p>a = 0, b = 3.1416</p>
-<p>Result ≈ 2.0000</p>
+<h3>Step 1: Initial Trapezoidal Rule</h3>
+<p class="step">
+R(0,0) = (π/2)[sin(0) + sin(π)]  
+= 0
+</p>
+
+<h3>Step 2: First Refinement</h3>
+<p class="step">
+Midpoint: x = 1.5708  
+sin(1.5708) ≈ 1
+</p>
+
+<h3>Step 3: Improved Approximation</h3>
+<p class="step">
+R(1,0) = 1.5708
+</p>
+
+<h3>Step 4: Romberg Result</h3>
+<p class="step">
+R(1,1) = 2.0000
+</p>
+</div>
 
 <br>
 
-<a href="/">Back Home</a>
+<a href="/">← Back Home</a>
 
 </body>
 </html>
